@@ -1,6 +1,7 @@
 public class Account {
     protected double balance;
 
+    public Account(){}
     public Account(double initBalance){
         balance = initBalance;
     }
@@ -22,9 +23,8 @@ public class Account {
 
 class SavingAccount extends Account{
     private double interestRate;
-
-    public SavingAccount(double initBalance, double balance, double interest_rate){
-        super(initBalance);
+    
+    public SavingAccount( double balance, double interest_rate){
         super.balance = balance;
         this.interestRate = interest_rate;
     }
@@ -34,15 +34,14 @@ class SavingAccount extends Account{
 class CheckingAccount extends Account{
     private double overdraftProtection;
 
-    public CheckingAccount(double initBalance, double balance){
-        super(initBalance);
+    public CheckingAccount(double balance){
+        super();
         this.balance = balance;
         overdraftProtection = -0.1d;
 
     }
 
-    public CheckingAccount(double initBalance, double balance, double protect){
-        super(initBalance);
+    public CheckingAccount(double balance, double protect){;
         super.balance = balance;
         overdraftProtection = protect;
     }
